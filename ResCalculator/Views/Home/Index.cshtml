@@ -1,0 +1,58 @@
+﻿@model ResCalculator.Models.ResistorBands;
+
+@{
+    ViewData["Title"] = "Home Page";
+    var calcers = new List<SelectListItem>
+    {
+        //new SelectListItem{Text="None", Value="0"},
+        new SelectListItem{Text="Pink", Value="1"},
+        new SelectListItem{Text="Silver", Value="2"},
+        new SelectListItem{Text="Gold", Value="3"},
+        new SelectListItem{Text="Black", Value="4"},
+        new SelectListItem{Text="Brown", Value="5"},
+
+        new SelectListItem{Text="Red", Value="6"},
+        new SelectListItem{Text="Orange", Value="7"},
+        new SelectListItem{Text="Yellow", Value="8"},
+        new SelectListItem{Text="Green", Value="9"},
+
+        new SelectListItem{Text="Blue", Value="10"},
+        new SelectListItem{Text="Violet", Value="11"},
+        new SelectListItem{Text="Grey", Value="12"},
+        new SelectListItem{Text="White", Value="13"}
+
+    };
+
+}
+
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+        @using (Html.BeginForm("Calculate", "Home"))
+        {
+            <div>
+                @Html.LabelFor(a => a.bandA, "Color of Resistor Band A:")
+                @Html.DropDownListFor(a => a.bandA, calcers, "None")
+            </div>
+            <div>
+                @Html.LabelFor(a => a.bandB, "Color of Resistor Band B:")
+                @Html.DropDownListFor(a => a.bandB, calcers, "None")
+            </div>
+            <div>
+                @Html.LabelFor(a => a.bandC, "Color of Resistor Band C:")
+                @Html.DropDownListFor(a => a.bandC, calcers, "None")
+            </div>
+            <div>
+                @Html.LabelFor(a => a.bandD, "Color of Resistor Band D:")
+                @Html.DropDownListFor(a => a.bandD, calcers, "None")
+            </div>
+            <input type="Submit" value="Calculate" />
+        }
+    </div>
+
+    <div class="text-xl-center">
+        <p>Resistor Ohm Value: @ViewData["OhmValue"]</p>
+        <p>Tolerance Percentage: @ViewData["Tolerance"]</p>
+    </div>
