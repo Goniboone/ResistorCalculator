@@ -1,58 +1,105 @@
-﻿@model ResCalculator.Models.ResistorBands;
+@model ResCalculator.Models.ResistorBands;
 
 @{
     ViewData["Title"] = "Home Page";
-    var calcers = new List<SelectListItem>
-    {
-        //new SelectListItem{Text="None", Value="0"},
-        new SelectListItem{Text="Pink", Value="1"},
-        new SelectListItem{Text="Silver", Value="2"},
-        new SelectListItem{Text="Gold", Value="3"},
-        new SelectListItem{Text="Black", Value="4"},
-        new SelectListItem{Text="Brown", Value="5"},
-
-        new SelectListItem{Text="Red", Value="6"},
-        new SelectListItem{Text="Orange", Value="7"},
-        new SelectListItem{Text="Yellow", Value="8"},
-        new SelectListItem{Text="Green", Value="9"},
-
-        new SelectListItem{Text="Blue", Value="10"},
-        new SelectListItem{Text="Violet", Value="11"},
-        new SelectListItem{Text="Grey", Value="12"},
-        new SelectListItem{Text="White", Value="13"}
-
-    };
 
 }
 
+@section Styles {
+    <link href="@Url.Content("~/css/homeIndex.css")" rel="stylesheet" type="text/css" />
+}
 
-    <div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 
-        @using (Html.BeginForm("Calculate", "Home"))
-        {
-            <div>
-                @Html.LabelFor(a => a.bandA, "Color of Resistor Band A:")
-                @Html.DropDownListFor(a => a.bandA, calcers, "None")
-            </div>
-            <div>
-                @Html.LabelFor(a => a.bandB, "Color of Resistor Band B:")
-                @Html.DropDownListFor(a => a.bandB, calcers, "None")
-            </div>
-            <div>
-                @Html.LabelFor(a => a.bandC, "Color of Resistor Band C:")
-                @Html.DropDownListFor(a => a.bandC, calcers, "None")
-            </div>
-            <div>
-                @Html.LabelFor(a => a.bandD, "Color of Resistor Band D:")
-                @Html.DropDownListFor(a => a.bandD, calcers, "None")
-            </div>
-            <input type="Submit" value="Calculate" />
-        }
-    </div>
+    @using (Html.BeginForm("Calculate", "Home"))
+    {
+        <div>
+            @Html.LabelFor(a => a.bandA, "Color of Resistor Band A:")
+            <select id="bandA" name="bandA">
+                <option value="">Select One</option>
+                <option value="0">None</option>
+                <option class="pink-item" value="1">Pink</option>
+                <option class="silver-item" value="2">Silver</option>
+                <option class="gold-item" value="3">Gold</option>
+                <option class="black-item" value="4">Black</option>
+                <option class="brown-item" value="5">Brown</option>
+                <option class="red-item" value="6">Red</option>
+                <option class="orange-item" value="7">Orange</option>
+                <option class="yellow-item" value="8">Yellow</option>
+                <option class="green-item" value="9">Green</option>
+                <option class="blue-item" value="10">Blue</option>
+                <option class="violet-item" value="11">Violet</option>
+                <option class="grey-item" value="12">Grey</option>
+                <option class="white-item" value="13">White</option>
+            </select>
+        </div>
+        <div>
+            @Html.LabelFor(a => a.bandB, "Color of Resistor Band B:")
+            <select id="bandB" name="bandB">
+                <option value="">Select One</option>
+                <option value="0">None</option>
+                <option class="pink-item" value="1">Pink</option>
+                <option class="silver-item" value="2">Silver</option>
+                <option class="gold-item" value="3">Gold</option>
+                <option class="black-item" value="4">Black</option>
+                <option class="brown-item" value="5">Brown</option>
+                <option class="red-item" value="6">Red</option>
+                <option class="orange-item" value="7">Orange</option>
+                <option class="yellow-item" value="8">Yellow</option>
+                <option class="green-item" value="9">Green</option>
+                <option class="blue-item" value="10">Blue</option>
+                <option class="violet-item" value="11">Violet</option>
+                <option class="grey-item" value="12">Grey</option>
+                <option class="white-item" value="13">White</option>
+            </select>
+        </div>
+        <div>
+            @Html.LabelFor(a => a.bandC, "Color of Resistor Band C:")
+            <select id="bandC" name="bandC">
+                <option value="">Select One</option>
+                <option value="0">None</option>
+                <option class="pink-item" value="1">Pink</option>
+                <option class="silver-item" value="2">Silver</option>
+                <option class="gold-item" value="3">Gold</option>
+                <option class="black-item" value="4">Black</option>
+                <option class="brown-item" value="5">Brown</option>
+                <option class="red-item" value="6">Red</option>
+                <option class="orange-item" value="7">Orange</option>
+                <option class="yellow-item" value="8">Yellow</option>
+                <option class="green-item" value="9">Green</option>
+                <option class="blue-item" value="10">Blue</option>
+                <option class="violet-item" value="11">Violet</option>
+                <option class="grey-item" value="12">Grey</option>
+                <option class="white-item" value="13">White</option>
+            </select>
+        </div>
+        <div>
+            @Html.LabelFor(a => a.bandD, "Color of Resistor Band D:")
+            <select id="bandD" name="bandD">
+                <option value="">Select One</option>
+                <option value="0">None</option>
+                <option class="pink-item" value="1">Pink</option>
+                <option class="silver-item" value="2">Silver</option>
+                <option class="gold-item" value="3">Gold</option>
+                <option class="black-item" value="4">Black</option>
+                <option class="brown-item" value="5">Brown</option>
+                <option class="red-item" value="6">Red</option>
+                <option class="orange-item" value="7">Orange</option>
+                <option class="yellow-item" value="8">Yellow</option>
+                <option class="green-item" value="9">Green</option>
+                <option class="blue-item" value="10">Blue</option>
+                <option class="violet-item" value="11">Violet</option>
+                <option class="grey-item" value="12">Grey</option>
+                <option class="white-item" value="13">White</option>
+            </select>
+        </div>
+        <input type="Submit" value="Calculate" />
+    }
+</div>
 
-    <div class="text-xl-center">
-        <p>Resistor Ohm Value: @ViewData["OhmValue"]</p>
-        <p>Tolerance Percentage: @ViewData["Tolerance"]</p>
-    </div>
+<div class="text-xl-center">
+    <p>Resistor Ohm Value: @ViewData["OhmValue"]</p>
+    <p>Tolerance Percentage: @ViewData["Tolerance"]</p>
+</div>
