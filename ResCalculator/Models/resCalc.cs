@@ -19,19 +19,19 @@ public class OhmValueCalc : IOhmValueCalculator
     {
         switch (bandDColor)
         {
-            case "0": return 20;
+            case "None": return 20;
             // Pink has no tolerance percentage
-            case "2": return 10;
-            case "3": return 5;
+            case "Silver": return 10;
+            case "Gold": return 5;
             // Black has no tolerance percentage either
-            case "5": return 1;
-            case "6": return 2;
-            case "7": return .05;
-            case "8": return .02;
-            case "9": return .5;
-            case "10": return .25;
-            case "11": return .1;
-            case "12": return .01;
+            case "Brown": return 1;
+            case "Red": return 2;
+            case "Orange": return .05;
+            case "Yellow": return .02;
+            case "Green": return .5;
+            case "Blue": return .25;
+            case "Violet": return .1;
+            case "Grey": return .01;
             // White has no tolerance percentage either
             default: return 0;
         }
@@ -42,31 +42,31 @@ public class OhmValueCalc : IOhmValueCalculator
 
         switch (bandAColor)
         {
-            case "5":
+            case "Brown":
                 ohms = "1";
                 break;
-            case "6":
+            case "Red":
                 ohms = "2";
                 break;
-            case "7":
+            case "Orange":
                 ohms = "3";
                 break;
-            case "8":
+            case "Yellow":
                 ohms = "4";
                 break;
-            case "9":
+            case "Green":
                 ohms = "5";
                 break;
-            case "10":
+            case "Blue":
                 ohms = "6";
                 break;
-            case "11":
+            case "Violet":
                 ohms = "7";
                 break;
-            case "12":
+            case "Grey":
                 ohms = "8";
                 break;
-            case "13":
+            case "White":
                 ohms = "9";
                 break;
             default:
@@ -75,31 +75,31 @@ public class OhmValueCalc : IOhmValueCalculator
 
         switch (bandBColor)
         {
-            case "5":
+            case "Brown":
                 ohms += "1";
                 break;
-            case "6":
+            case "Red":
                 ohms += "2";
                 break;
-            case "7":
+            case "Orange":
                 ohms += "3";
                 break;
-            case "8":
+            case "Yellow":
                 ohms += "4";
                 break;
-            case "9":
+            case "Green":
                 ohms += "5";
                 break;
-            case "10":
+            case "Blue":
                 ohms += "6";
                 break;
-            case "11":
+            case "Violet":
                 ohms += "7";
                 break;
-            case "12":
+            case "Grey":
                 ohms += "8";
                 break;
-            case "13":
+            case "White":
                 ohms += "9";
                 break;
             default:
@@ -108,30 +108,30 @@ public class OhmValueCalc : IOhmValueCalculator
 
         switch (bandCColor)
         {
-            case "1":
+            case "Pink":
                 return .001 * double.Parse(ohms);
-            case "2":
+            case "Silver":
                 return .01 * double.Parse(ohms);
-            case "3":
+            case "Gold":
                 return .1 * double.Parse(ohms);
             // case 4 would just multiply by 1x
-            case "5":
+            case "Brown":
                 return 10 * double.Parse(ohms);
-            case "6":
+            case "Red":
                 return 100 * double.Parse(ohms);
-            case "7":
+            case "Orange":
                 return 1000 * double.Parse(ohms);
-            case "8":
+            case "Yellow":
                 return 10000 * double.Parse(ohms);
-            case "9":
+            case "Green":
                 return 100000 * double.Parse(ohms);
-            case "10":
+            case "Blue":
                 return 1000000 * double.Parse(ohms);
-            case "11":
+            case "Violet":
                 return 10000000 * double.Parse(ohms);
-            case "12":
+            case "Grey":
                 return 100000000 * double.Parse(ohms);
-            case "13":
+            case "White":
                 return 1000000000 * double.Parse(ohms);
             default:
                 break;

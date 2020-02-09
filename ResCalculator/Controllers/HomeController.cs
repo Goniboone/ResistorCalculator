@@ -16,10 +16,15 @@ namespace ResCalculator.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            
         }
 
         public IActionResult Index()
         {
+            ViewBag.bandOne = "Select One";
+            ViewBag.bandTwo = "Select One";
+            ViewBag.bandThree = "Select One";
+            ViewBag.bandFour = "Select One";
             return View();
         }
 
@@ -29,7 +34,11 @@ namespace ResCalculator.Controllers
             var C = new OhmValueCalc();
             ViewData["OhmValue"] = C.CalculateOhmValue(rb.bandA, rb.bandB, rb.bandC);
             ViewData["Tolerance"] = $"+-{C.GetTolerance(rb.bandD)}%";
-            return View("index");
+            ViewBag.bandOne = rb.bandA;
+            ViewBag.bandTwo = rb.bandB;
+            ViewBag.bandThree = rb.bandC;
+            ViewBag.bandFour = rb.bandD;
+            return View("index", rb);
         }
 
         public IActionResult Privacy()
