@@ -99,7 +99,17 @@
     }
 </div>
 
+
 <div class="text-xl-center">
+    <br />
     <p>Resistor Ohm Value: @ViewData["OhmValue"]</p>
-    <p>Tolerance Percentage: @ViewData["Tolerance"]</p>
+    @if (String.IsNullOrWhiteSpace("" + ViewData["Tolerance"]))
+    {
+        <p>Tolerance Percentage:</p>
+    }
+    else
+    {
+        <p>@Html.Raw($"Tolerance Percentage: &plusmn;{@ViewData["Tolerance"]}")</p>
+    }
+    
 </div>

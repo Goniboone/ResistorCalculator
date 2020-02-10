@@ -33,7 +33,7 @@ namespace ResCalculator.Controllers
         {
             var C = new OhmValueCalc();
             ViewData["OhmValue"] = C.CalculateOhmValue(rb.bandA, rb.bandB, rb.bandC);
-            ViewData["Tolerance"] = $"+-{C.GetTolerance(rb.bandD)}%";
+            ViewData["Tolerance"] = $"{C.GetTolerance(rb.bandD)}%";
             ViewBag.bandOne = rb.bandA;
             ViewBag.bandTwo = rb.bandB;
             ViewBag.bandThree = rb.bandC;
