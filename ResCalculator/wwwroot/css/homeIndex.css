@@ -49,3 +49,11 @@
 .white-item {
     background-color: lightgray;
 }
+
+footer {
+    background-color: aquamarine;
+}
+
+.bg-white {
+    background-color: aquamarine!important;
+}
